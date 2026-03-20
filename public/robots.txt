@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+Disallow: /profile
+Disallow: /checkout/success
+Disallow: /checkout/cancel
+
+# AI Crawler Optimization
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://bentoflow.pro/sitemap.xml

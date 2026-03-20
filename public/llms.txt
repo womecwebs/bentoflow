@@ -1,0 +1,35 @@
+# BentoFlow Pro - AI-Powered Bento Grid Builder
+
+BentoFlow Pro is a high-performance web application designed for creating, customizing, and deploying modular "Bento" style grid layouts. It leverages AI to generate layouts and provides a marketplace for premium templates.
+
+## Key Features
+- **AI Bento Builder**: Generate production-ready grid layouts using natural language prompts.
+- **Visual Editor**: Drag-and-drop interface for customizing grid dimensions, gaps, and component placement.
+- **Marketplace**: Buy and sell premium bento templates.
+- **Community Gallery**: Share and remix grids created by other designers.
+- **SEO Tools Suite**: Built-in tools for generating SEO-optimized content for bento grids.
+
+## Technical Stack
+- **Frontend**: React 18, TypeScript, Tailwind CSS, Framer Motion (motion/react).
+- **Backend**: Supabase (Auth, Database, Storage).
+- **Payments**: ClickPesa integration for marketplace transactions.
+- **AI**: Google Gemini Pro for layout generation and content optimization.
+
+## Documentation for AI Models
+- **Grid Configuration**: Grids are defined by a `config_data` object containing `boxes` (array of coordinates and dimensions) and `config` (columns, gap, radius).
+- **Export Formats**: Supports raw HTML/CSS export and React component generation.
+- **API Integration**: Uses Supabase client for real-time data synchronization.
+
+## Brand Identity
+BentoFlow Pro focuses on minimalism, high-density information display, and rapid design iteration.
+
+## Sitemap & Paths
+- Home: /
+- AI Generator: /generator
+- Marketplace: /marketplace
+- Community Gallery: /community
+- Design Blog: /blog
+- SEO Guide: /seo-guide
+- About: /about
+- Privacy Policy: /privacy-policy
+- Terms of Service: /terms-of-service
