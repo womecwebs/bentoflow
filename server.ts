@@ -1,6 +1,7 @@
 import express, { Request, Response, NextFunction } from "express";
 import { createServer as createViteServer } from "vite";
 import axios from "axios";
+import serverless from "serverless-http";
 import dotenv from "dotenv";
 import { createClient } from "@supabase/supabase-js";
 import fs from "fs/promises";
@@ -11,6 +12,8 @@ import { JSDOM } from "jsdom";
 import createDOMPurify from "dompurify";
 
 dotenv.config();
+
+const app = express();
 
 const window = new JSDOM("").window;
 const DOMPurify = createDOMPurify(window as any);
@@ -112,7 +115,6 @@ const authenticateUser = async (
 };
 
 async function startServer() {
-  const app = express();
   const PORT = 3000;
 
   app.use(express.json());
@@ -493,48 +495,51 @@ async function startServer() {
   // });
 
   app.post("/api/payments/clickpesa", authenticateUser, async (req, res) => {
-  const { itemId, amount, currency } = req.body;
-  const userId = (req as any).user.id;
-  const userEmail = (req as any).user.email;
+    const { itemId, amount, currency } = req.body;
+    const userId = (req as any).user.id;
+    const userEmail = (req as any).user.email;
 
-  // Manually clean the environment string
-  const env = (process.env.CLICKPESA_ENVIRONMENT || "sandbox").trim().toLowerCase();
-  
-  // Hardcode the URLs directly to avoid any concatenation errors
-  const finalUrl = env === "production" 
-    ? "https://api.clickpesa.com/v1/checkout/links" 
-    : "https://api.sandbox.clickpesa.com/v1/checkout/links";
+    // Manually clean the environment string
+    const env = (process.env.CLICKPESA_ENVIRONMENT || "sandbox")
+      .trim()
+      .toLowerCase();
 
-  console.log(`[ClickPesa] DEBUG - Target URL: "${finalUrl}"`);
-  console.log(`[ClickPesa] DEBUG - Environment detected: "${env}"`);
+    // Hardcode the URLs directly to avoid any concatenation errors
+    const finalUrl =
+      env === "production"
+        ? "https://api.clickpesa.com/v1/checkout/links"
+        : "https://api.sandbox.clickpesa.com/v1/checkout/links";
 
-  try {
-    const response = await axios({
-      method: 'post',
-      url: finalUrl,
-      data: {
-        client_id: process.env.CLICKPESA_CLIENT_ID?.trim(),
-        amount: Number(amount),
-        currency: currency || "TZS",
-        description: `Template Purchase: ${itemId}`,
-        allowed_methods: ["card", "mobile_money"],
-        return_url: `${process.env.VITE_APP_URL}/marketplace?payment=success`,
-        cancel_url: `${process.env.VITE_APP_URL}/marketplace`,
-        metadata: {
-          userId: String(userId),
-          templateId: String(itemId),
-          email: userEmail
+    console.log(`[ClickPesa] DEBUG - Target URL: "${finalUrl}"`);
+    console.log(`[ClickPesa] DEBUG - Environment detected: "${env}"`);
+
+    try {
+      const response = await axios({
+        method: "post",
+        url: finalUrl,
+        data: {
+          client_id: process.env.CLICKPESA_CLIENT_ID?.trim(),
+          amount: Number(amount),
+          currency: currency || "TZS",
+          description: `Template Purchase: ${itemId}`,
+          allowed_methods: ["card", "mobile_money"],
+          return_url: `${process.env.VITE_APP_URL}/marketplace?payment=success`,
+          cancel_url: `${process.env.VITE_APP_URL}/marketplace`,
+          metadata: {
+            userId: String(userId),
+            templateId: String(itemId),
+            email: userEmail,
+          },
         },
-      },
-      headers: {
-        // Ensure "Bearer " has exactly one space and no extra characters
-        'Authorization': `Bearer ${process.env.CLICKPESA_API_KEY?.trim()}`,
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      }
-    });
+        headers: {
+          // Ensure "Bearer " has exactly one space and no extra characters
+          Authorization: `Bearer ${process.env.CLICKPESA_API_KEY?.trim()}`,
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      });
 
-    // ... rest of your response handling code
+      // ... rest of your response handling code
 
       // Extract the checkout URL from the response
       const checkoutUrl = response.data?.url || response.data?.checkout_url;
@@ -867,4 +872,15 @@ async function startServer() {
   });
 }
 
-startServer();
+// 1. Initialize the server routes
+startServer()
+  .then(() => {
+    console.log("Routes initialized successfully");
+  })
+  .catch((err) => {
+    console.error("Failed to initialize routes:", err);
+  });
+
+// 2. This allows Netlify to run your express app as a function
+// It must stay outside the function at the bottom
+export const handler = serverless(app);
