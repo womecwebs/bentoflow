@@ -1,33 +1,37 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { supabase } from '../lib/supabase';
-import { motion } from 'motion/react';
-import { LogIn, Mail, Lock, Loader2, Github } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { supabase } from "../lib/supabase";
+import { motion } from "motion/react";
+import { LogIn, Mail, Lock, Loader2, Github } from "lucide-react";
 
 export function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isSignUp, setIsSignUp] = useState(false);
-  
+
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from?.pathname || '/';
+  const from = location.state?.from?.pathname || "/";
 
   // Redirect user if they are already logged in
   useEffect(() => {
     const checkUser = async () => {
-      const { data: { session } } = await supabase.auth.getSession();
+      const {
+        data: { session },
+      } = await supabase.auth.getSession();
       if (session) {
-        navigate('/');
+        navigate("/");
       }
     };
     checkUser();
 
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((event, session) => {
       if (session) {
-        navigate('/');
+        navigate("/");
       }
     });
     return () => subscription.unsubscribe();
@@ -40,19 +44,23 @@ export function Login() {
 
     try {
       if (isSignUp) {
-        const { error } = await supabase.auth.signUp({ 
-          email, 
+        const { error } = await supabase.auth.signUp({
+          email,
           password,
           options: {
+            emailRedirectTo: window.location.origin, // ADD THIS LINE
             data: {
-              full_name: email.split('@')[0],
-            }
-          }
+              full_name: email.split("@")[0],
+            },
+          },
         });
         if (error) throw error;
-        alert('Check your email for the confirmation link!');
+        alert("Check your email for the confirmation link!");
       } else {
-        const { error } = await supabase.auth.signInWithPassword({ email, password });
+        const { error } = await supabase.auth.signInWithPassword({
+          email,
+          password,
+        });
         if (error) throw error;
         navigate(from, { replace: true });
       }
@@ -63,12 +71,13 @@ export function Login() {
     }
   };
 
-  const handleOAuthLogin = async (provider: 'google' | 'github') => {
+  const handleOAuthLogin = async (provider: "google" | "github") => {
     try {
+      setError(null);
       const { error } = await supabase.auth.signInWithOAuth({
         provider,
         options: {
-          redirectTo: `${window.location.origin}/auth/callback`,
+          redirectTo: window.location.origin,
         },
       });
       if (error) throw error;
@@ -79,30 +88,36 @@ export function Login() {
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4 bg-black">
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="w-full max-w-md bg-zinc-900/50 border border-white/10 rounded-2xl p-8 backdrop-blur-xl shadow-2xl"
       >
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-white mb-2">
-            {isSignUp ? 'Create Account' : 'Welcome Back'}
+            {isSignUp ? "Create Account" : "Welcome Back"}
           </h1>
           <p className="text-zinc-400">
-            {isSignUp ? 'Join BentoFlow Pro today' : 'Sign in to access your templates'}
+            {isSignUp
+              ? "Join BentoFlow Pro today"
+              : "Sign in to access your templates"}
           </p>
         </div>
 
         <div className="grid grid-cols-2 gap-4 mb-8">
-          <button 
-            onClick={() => handleOAuthLogin('google')}
+          <button
+            onClick={() => handleOAuthLogin("google")}
             className="flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 py-2.5 rounded-xl text-sm font-medium text-white transition-all"
           >
-            <img src="https://www.google.com/favicon.ico" className="w-4 h-4" alt="Google" />
+            <img
+              src="https://www.google.com/favicon.ico"
+              className="w-4 h-4"
+              alt="Google"
+            />
             Google
           </button>
-          <button 
-            onClick={() => handleOAuthLogin('github')}
+          <button
+            onClick={() => handleOAuthLogin("github")}
             className="flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 py-2.5 rounded-xl text-sm font-medium text-white transition-all"
           >
             <Github size={16} />
@@ -115,7 +130,9 @@ export function Login() {
             <div className="w-full border-t border-white/5"></div>
           </div>
           <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-zinc-900 px-2 text-zinc-500">Or continue with email</span>
+            <span className="bg-zinc-900 px-2 text-zinc-500">
+              Or continue with email
+            </span>
           </div>
         </div>
 
@@ -127,7 +144,9 @@ export function Login() {
           )}
 
           <div>
-            <label className="block text-sm font-medium text-zinc-300 mb-2">Email Address</label>
+            <label className="block text-sm font-medium text-zinc-300 mb-2">
+              Email Address
+            </label>
             <div className="relative">
               <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-500" />
               <input
@@ -142,7 +161,9 @@ export function Login() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-zinc-300 mb-2">Password</label>
+            <label className="block text-sm font-medium text-zinc-300 mb-2">
+              Password
+            </label>
             <div className="relative">
               <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-500" />
               <input
@@ -166,7 +187,7 @@ export function Login() {
             ) : (
               <>
                 <LogIn className="w-5 h-5" />
-                {isSignUp ? 'Sign Up' : 'Sign In'}
+                {isSignUp ? "Sign Up" : "Sign In"}
               </>
             )}
           </button>
@@ -177,7 +198,9 @@ export function Login() {
             onClick={() => setIsSignUp(!isSignUp)}
             className="text-zinc-400 hover:text-white text-sm transition-colors"
           >
-            {isSignUp ? 'Already have an account? Sign In' : "Don't have an account? Sign Up"}
+            {isSignUp
+              ? "Already have an account? Sign In"
+              : "Don't have an account? Sign Up"}
           </button>
         </div>
       </motion.div>
