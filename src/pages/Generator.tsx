@@ -499,6 +499,18 @@ export const Generator: React.FC = () => {
                 )}
               </div>
             </div>
+            {/* native banner ads adsterra */}
+            {/* Wrap in a container with a fixed minimum height to prevent layout shift */}
+            {!profile?.is_pro && (
+              <div className="mt-8 p-4 bg-zinc-900/30 border border-white/5 rounded-2xl overflow-hidden">
+                <p className="text-[9px] text-white/20 uppercase tracking-widest mb-2">
+                  Recommended
+                </p>
+                <div className="min-h-50 flex items-center justify-center">
+                  <div id="container-645e86c75d5ab52d304b27cf26736b30"></div>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Preview Panel */}
@@ -534,6 +546,8 @@ export const Generator: React.FC = () => {
       {/* Templates Section */}
       <div className="max-w-7xl mx-auto mt-24 pb-20">
         <div className="flex items-center justify-between mb-8">
+          {/* native banner ads adsterra */}
+          <div id="container-645e86c75d5ab52d304b27cf26736b30"></div>
           <div>
             <h2 className="text-3xl font-bold mb-2">
               Premium & Free Templates
