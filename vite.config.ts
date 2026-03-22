@@ -15,7 +15,6 @@ export default defineConfig(({ mode }) => {
         "@": path.resolve(__dirname, "."),
       },
     },
-    // ADD THIS SECTION HERE
     build: {
       rollupOptions: {
         external: ["lightningcss"],
