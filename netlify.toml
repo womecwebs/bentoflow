@@ -3,10 +3,17 @@
   publish = "dist"
   functions = "netlify/functions"
 
-[buid.environment]
-  SECRETS_SCAN_ENABLED = "false"
-
 [functions]
   external_node_modules = ["lightningcss", "express"]
 
 [functions.node_bundle]
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/server/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "index.html"
+  status = 200
