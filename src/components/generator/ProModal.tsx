@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Zap, X, CheckCircle2, Loader2, AlertCircle } from 'lucide-react';
-import { supabase } from '../../lib/supabase';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Zap, X, CheckCircle2, Loader2, AlertCircle } from "lucide-react";
+import { supabase } from "../../lib/supabase";
 
 interface ProModalProps {
   isOpen: boolean;
@@ -17,18 +17,20 @@ export const ProModal: React.FC<ProModalProps> = ({ isOpen, onClose }) => {
     setError(null);
 
     try {
-      const { data: { session } } = await supabase.auth.getSession();
-      
+      const {
+        data: { session },
+      } = await supabase.auth.getSession();
+
       if (!session) {
         throw new Error("You must be logged in to upgrade.");
       }
 
-      const response = await fetch('/api/payments/upgrade-pro', {
-        method: 'POST',
+      const response = await fetch("/api/payments/upgrade-pro", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${session.access_token}`
-        }
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${session.access_token}`,
+        },
       });
 
       const data = await response.json();
@@ -53,7 +55,7 @@ export const ProModal: React.FC<ProModalProps> = ({ isOpen, onClose }) => {
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-100 flex items-center justify-center p-4">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -69,7 +71,7 @@ export const ProModal: React.FC<ProModalProps> = ({ isOpen, onClose }) => {
           >
             {/* Background Glow */}
             <div className="absolute -top-24 -right-24 w-48 h-48 bg-emerald-500/20 blur-[100px]" />
-            
+
             <button
               onClick={onClose}
               disabled={isPaying}
@@ -80,30 +82,42 @@ export const ProModal: React.FC<ProModalProps> = ({ isOpen, onClose }) => {
 
             <div className="flex flex-col items-center text-center">
               <div className="w-16 h-16 bg-emerald-500/10 rounded-2xl flex items-center justify-center mb-6 border border-emerald-500/20">
-                <Zap className="text-emerald-500" size={32} fill="currentColor" />
+                <Zap
+                  className="text-emerald-500"
+                  size={32}
+                  fill="currentColor"
+                />
               </div>
 
-              <h2 className="text-2xl font-bold text-white mb-2">Unlock Unlimited AI Power</h2>
+              <h2 className="text-2xl font-bold text-white mb-2">
+                Unlock Unlimited AI Power
+              </h2>
               <p className="text-white/60 mb-8">
-                You've reached your limit of 2 free generations. Upgrade to Pro for unlimited high-performance landing pages.
+                You've reached your limit of 2 free generations. Upgrade to Pro
+                for unlimited high-performance landing pages.
               </p>
 
               {error && (
                 <div className="w-full mb-8 p-5 bg-red-500/10 border border-red-500/20 rounded-2xl flex flex-col items-center gap-3 text-red-400 text-sm text-center">
                   <AlertCircle size={24} className="shrink-0" />
                   <p className="font-medium">{error}</p>
-                  <p className="text-[10px] text-red-400/60 uppercase tracking-widest">Configuration Required</p>
+                  <p className="text-[10px] text-red-400/60 uppercase tracking-widest">
+                    Configuration Required
+                  </p>
                 </div>
               )}
 
               <div className="w-full space-y-4 mb-8">
                 {[
-                  'Unlimited AI Generations',
-                  'Tailwind CSS 4 Optimized',
-                  'Premium Bento Layouts',
-                  'Priority Support'
+                  "Unlimited AI Generations",
+                  "Tailwind CSS 4 Optimized",
+                  "Premium Bento Layouts",
+                  "Priority Support",
                 ].map((feature, i) => (
-                  <div key={i} className="flex items-center gap-3 text-sm text-white/80">
+                  <div
+                    key={i}
+                    className="flex items-center gap-3 text-sm text-white/80"
+                  >
                     <CheckCircle2 size={18} className="text-emerald-500" />
                     {feature}
                   </div>
@@ -123,11 +137,15 @@ export const ProModal: React.FC<ProModalProps> = ({ isOpen, onClose }) => {
                 ) : (
                   <>
                     Upgrade to Pro for $15
-                    <Zap size={18} fill="currentColor" className="group-hover:scale-120 transition-transform" />
+                    <Zap
+                      size={18}
+                      fill="currentColor"
+                      className="group-hover:scale-120 transition-transform"
+                    />
                   </>
                 )}
               </button>
-              
+
               <p className="text-[10px] text-white/30 mt-4 uppercase tracking-widest">
                 One-time payment • Lifetime access
               </p>

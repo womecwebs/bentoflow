@@ -61,10 +61,12 @@ export interface WebsiteProject {
 
 export async function generateWebsite(prompt: string): Promise<WebsiteProject> {
   if (!ai) {
-    throw new Error("GEMINI_API_KEY is not set. Please add it to your environment variables or secrets.");
+    throw new Error(
+      "GEMINI_API_KEY is not set. Please add it to your environment variables or secrets.",
+    );
   }
 
-  const model = "gemini-3.1-pro-preview";
+  const model = "gemini-1.5-flash";
 
   const response = await ai.models.generateContent({
     model,
@@ -72,7 +74,7 @@ export async function generateWebsite(prompt: string): Promise<WebsiteProject> {
     config: {
       systemInstruction: SYSTEM_PROMPT,
       temperature: 0.7,
-      responseMimeType: "application/json"
+      responseMimeType: "application/json",
     },
   });
 
@@ -80,6 +82,8 @@ export async function generateWebsite(prompt: string): Promise<WebsiteProject> {
     return JSON.parse(response.text);
   } catch (error) {
     console.error("Failed to parse AI response as JSON:", response.text);
-    throw new Error("The AI returned an invalid response format. Please try again.");
+    throw new Error(
+      "The AI returned an invalid response format. Please try again.",
+    );
   }
 }
