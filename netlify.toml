@@ -3,9 +3,7 @@ command = "npmrunbuild"
 publish = "dist"
 functions = "netlify/functions"
 
-[build.environment]
-SECRETS_SCAN_ENABLED = "false"
-
 [functions]
-external_node_modules = ["lightningcss", "express"]
-node_bundle = true
+  external_node_modules = ["lightningcss", "express"]
+
+[functions.node_bundle]
