@@ -72,10 +72,19 @@ export const Generator: React.FC = () => {
       const response = await fetch("/api/projects", {
         headers: { Authorization: `Bearer ${session?.access_token}` },
       });
+
       const data = await response.json();
-      setProjects(data);
+
+      // FIX: Ensure data is an array before setting it
+      if (Array.isArray(data)) {
+        setProjects(data);
+      } else {
+        console.error("Backend did not return an array:", data);
+        setProjects([]); // Set to empty list so it doesn't crash
+      }
     } catch (err) {
       console.error("Error fetching projects:", err);
+      setProjects([]); // Safety fallback
     }
   };
 
