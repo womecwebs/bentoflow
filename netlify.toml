@@ -4,7 +4,7 @@
   functions = "netlify/functions"
 
 [functions]
-  external_node_modules = [lightningcss, "express"]
+  external_node_modules = ["lightningcss", "express"]
   node_bundle = true
 
 [build.environment]
