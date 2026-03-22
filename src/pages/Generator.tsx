@@ -546,8 +546,6 @@ export const Generator: React.FC = () => {
       {/* Templates Section */}
       <div className="max-w-7xl mx-auto mt-24 pb-20">
         <div className="flex items-center justify-between mb-8">
-          {/* native banner ads adsterra */}
-          <div id="container-645e86c75d5ab52d304b27cf26736b30"></div>
           <div>
             <h2 className="text-3xl font-bold mb-2">
               Premium & Free Templates
