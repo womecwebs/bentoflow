@@ -499,18 +499,6 @@ export const Generator: React.FC = () => {
                 )}
               </div>
             </div>
-            {/* native banner ads adsterra */}
-            {/* Wrap in a container with a fixed minimum height to prevent layout shift */}
-            {!profile?.is_pro && (
-              <div className="mt-8 p-4 bg-zinc-900/30 border border-white/5 rounded-2xl overflow-hidden">
-                <p className="text-[9px] text-white/20 uppercase tracking-widest mb-2">
-                  Recommended
-                </p>
-                <div className="min-h-50 flex items-center justify-center">
-                  <div id="container-645e86c75d5ab52d304b27cf26736b30"></div>
-                </div>
-              </div>
-            )}
           </div>
 
           {/* Preview Panel */}
@@ -672,6 +660,18 @@ export const Generator: React.FC = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* native banner ads adsterra */}
+        {!profile?.is_pro && (
+          <div className="mt-8 p-4 bg-zinc-900/30 border border-white/5 rounded-2xl overflow-hidden">
+            <p className="text-[9px] text-white/20 uppercase tracking-widest mb-2">
+              Recommended
+            </p>
+            <div className="min-h-50 flex items-center justify-center">
+              <div id="container-645e86c75d5ab52d304b27cf26736b30"></div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

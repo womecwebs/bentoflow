@@ -53,10 +53,115 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- small css for ads -->
+    <style>
+      /* Logic to show the right ad at the right time */
+      @media (max-width: 467px) {
+        .ad-mobile {
+          display: block !important;
+        }
+      }
+      @media (min-width: 468px) and (max-width: 767px) {
+        .ad-tablet {
+          display: block !important;
+        }
+      }
+      @media (min-width: 768px) {
+        .ad-desktop {
+          display: block !important;
+        }
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <div
+      id="sticky-ad-wrapper"
+      style="
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+        background: rgba(5, 5, 5, 0.9);
+        backdrop-filter: blur(12px);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 60px;
+      "
+    >
+      <div
+        style="
+          position: absolute;
+          top: -24px;
+          right: 12px;
+          background: #1a1a1a;
+          color: #666;
+          font-size: 10px;
+          padding: 4px 10px;
+          border-radius: 8px 8px 0 0;
+          cursor: pointer;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-bottom: none;
+        "
+        onclick="document.getElementById('sticky-ad-wrapper').remove()"
+      >
+        Close Ad ×
+      </div>
+
+      <div class="ad-mobile" style="display: none">
+        <script type="text/javascript">
+          atOptions = {
+            key: "6a138a6d9cd02e72a8df150eece96bb5",
+            format: "iframe",
+            height: 50,
+            width: 320,
+            params: {},
+          };
+        </script>
+        <script
+          type="text/javascript"
+          src="//www.highperformanceformat.com/6a138a6d9cd02e72a8df150eece96bb5/invoke.js"
+        ></script>
+      </div>
+
+      <div class="ad-tablet" style="display: none">
+        <script type="text/javascript">
+          atOptions = {
+            key: "5f791a23e450ea4f3f7477d3c253406a",
+            format: "iframe",
+            height: 60,
+            width: 468,
+            params: {},
+          };
+        </script>
+        <script
+          type="text/javascript"
+          src="//www.highperformanceformat.com/5f791a23e450ea4f3f7477d3c253406a/invoke.js"
+        ></script>
+      </div>
+
+      <div class="ad-desktop" style="display: none">
+        <script type="text/javascript">
+          atOptions = {
+            key: "c7915445d3db7acd8736f9b243e86864",
+            format: "iframe",
+            height: 90,
+            width: 728,
+            params: {},
+          };
+        </script>
+        <script
+          type="text/javascript"
+          src="//www.highperformanceformat.com/c7915445d3db7acd8736f9b243e86864/invoke.js"
+        ></script>
+      </div>
+    </div>
 
     <!-- adsterra social ads  -->
     <script src="https://pl28961389.profitablecpmratenetwork.com/01/fa/7a/01fa7a05b102bca5bed737cf6478044e.js"></script>
