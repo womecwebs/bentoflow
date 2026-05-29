@@ -1,0 +1,6 @@
+{
+  "name": "BentoFlow",
+  "description": "A high-performance Bento Grid Builder and Generator for Tailwind CSS, Shopify, and Portfolios, highly optimized for SEO and crawlability.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

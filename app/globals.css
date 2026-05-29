@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@theme {
+  --color-zinc-950: #09090b;
+  --color-brand-bg: #09090b;
+  --color-brand-dark: #030303;
+  --color-brand-card: #121214;
+  --color-brand-border: rgba(255, 255, 255, 0.08);
+  --color-brand-border-hover: rgba(255, 255, 255, 0.15);
+  
+  --color-brand-blue: #3b82f6;
+  --color-brand-purple: #8b5cf6;
+  --color-brand-pink: #ec4899;
+  --color-brand-emerald: #10b981;
+  --color-brand-cyan: #06b6d4;
+  
+  --font-sans: var(--font-sans), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-mono), monospace;
+  
+  --animate-fade-in: fadeIn 0.5s ease-out forwards;
+  --animate-subtle-pulse: subtlePulse 4s infinite alternate;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-zinc-950);
+    color: #f4f4f5; /* zinc-100 */
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  /* Custom high-performance modern scrollbars */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #030303;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.18);
+  }
+}
+
+@layer utilities {
+  /* Dynamic CSS repeating developer grid pattern for background */
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* Fine double overlay for workspace visual depth */
+  .bg-grid-pattern-dense {
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  /* Glowing ambient background light */
+  .bg-ambient-glow {
+    background: 
+      radial-gradient(circle at 15% 15%, rgba(59, 130, 246, 0.07) 0%, transparent 45%),
+      radial-gradient(circle at 85% 15%, rgba(139, 92, 246, 0.07) 0%, transparent 45%),
+      radial-gradient(circle at 50% 85%, rgba(236, 72, 153, 0.03) 0%, transparent 50%);
+  }
+
+  /* Accent gradient text utilities */
+  .text-gradient-primary {
+    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-emerald {
+    background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Card and Border glowing effects */
+  .glow-border {
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glow-border::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    z-index: -1;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(139, 92, 246, 0.15) 50%, rgba(236, 72, 153, 0.15) 100%);
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .glow-border:hover::before {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes subtlePulse {
+  0% { transform: scale(1); opacity: 0.3; }
+  100% { transform: scale(1.03); opacity: 0.5; }
+}
