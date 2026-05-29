@@ -27,9 +27,9 @@ export default function Page() {
     "@graph": [
       {
         "@type": "WebApplication",
-        "@id": "https://bentoflow.netlify.app/tools/breakpoint-simulator",
+        "@id": "https://bentoflow-pro.vercel.app/tools/breakpoint-simulator",
         "name": "Responsive Breakpoint Layout Simulator",
-        "url": "https://bentoflow.netlify.app/tools/breakpoint-simulator",
+        "url": "https://bentoflow-pro.vercel.app/tools/breakpoint-simulator",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "All",
         "description": "Simulate responsive mobile, tablet, and desktop layout sizes concurrently. Test auto-flow configurations across multi-device viewports."

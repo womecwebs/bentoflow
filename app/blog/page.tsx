@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Bento Grid Design Guides & Educational Blog',
     description: 'Expert-level design principles, coding templates, and optimization guides to supercharge your web layout. Complete, fast server-side outputs.',
-    url: 'https://bentoflow.pro/blog',
+    url: 'https://bentoflow-pro.vercel.app/blog',
     siteName: 'BentoFlow Pro',
     type: 'website'
   }

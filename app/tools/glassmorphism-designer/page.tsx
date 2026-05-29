@@ -27,9 +27,9 @@ export default function Page() {
     "@graph": [
       {
         "@type": "WebApplication",
-        "@id": "https://bentoflow.netlify.app/tools/glassmorphism-designer",
+        "@id": "https://bentoflow-pro.vercel.app/tools/glassmorphism-designer",
         "name": "CSS Glassmorphism Container Designer",
-        "url": "https://bentoflow.netlify.app/tools/glassmorphism-designer",
+        "url": "https://bentoflow-pro.vercel.app/tools/glassmorphism-designer",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "All",
         "description": "Build high-fidelity glassmorphic digital cells. Control backdrop blurs, ambient gradient glows, and transparent border overlays in real-time."

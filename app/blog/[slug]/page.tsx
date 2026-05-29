@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      url: `https://bentoflow.pro/blog/${post.slug}`,
+      url: `https://bentoflow-pro.vercel.app/blog/${post.slug}`,
       type: 'article',
     }
   };

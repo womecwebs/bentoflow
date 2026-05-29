@@ -27,9 +27,9 @@ export default function Page() {
     "@graph": [
       {
         "@type": "WebApplication",
-        "@id": "https://bentoflow.netlify.app/tools/color-palette-explorer",
+        "@id": "https://bentoflow-pro.vercel.app/tools/color-palette-explorer",
         "name": "Color Palette Grid Explorer",
-        "url": "https://bentoflow.netlify.app/tools/color-palette-explorer",
+        "url": "https://bentoflow-pro.vercel.app/tools/color-palette-explorer",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "All",
         "description": "Build premium contrasting color palettes and test theme mappings on active five-box bento preview components in real-time."

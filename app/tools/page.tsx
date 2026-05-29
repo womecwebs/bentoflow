@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Developer Utilities & Micro Tools Workspace',
     description: '40+ custom-built responsive developer web components and styling frameworks. Simplify your design workflow with premium visual builders.',
-    url: 'https://bentoflow.pro/tools',
+    url: 'https://bentoflow-pro.vercel.app/tools',
     siteName: 'BentoFlow Pro',
     type: 'website'
   }

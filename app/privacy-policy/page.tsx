@@ -179,7 +179,7 @@ export default function PrivacyPolicyPage() {
             If you have questions regarding these privacy rules, need to submit an index removal, or require details regarding cookie opt-outs, coordinate directly with our operations team:
           </p>
           <code className="text-emerald-400 font-mono text-xs select-all block">
-            privacy@bentoflow.vercel.app
+            privacy@bentoflow-pro.vercel.app
           </code>
         </section>
 

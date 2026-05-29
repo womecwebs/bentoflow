@@ -27,9 +27,9 @@ export default function Page() {
     "@graph": [
       {
         "@type": "WebApplication",
-        "@id": "https://bentoflow.netlify.app/tools/flex-to-grid-converter",
+        "@id": "https://bentoflow-pro.vercel.app/tools/flex-to-grid-converter",
         "name": "CSS Flexbox to Grid Matrix Converter",
-        "url": "https://bentoflow.netlify.app/tools/flex-to-grid-converter",
+        "url": "https://bentoflow-pro.vercel.app/tools/flex-to-grid-converter",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "All",
         "description": "Convert unorganized CSS flexbox wrappers into structured multi-span CSS Grid matrix templates instantly."

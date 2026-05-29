@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free Bento Grid Layout Templates catalog | BentoFlow',
     description: 'Find premium responsive bento templates. Import layouts into our visual grid editor with one click.',
-    url: 'https://bentoflow.pro/templates',
+    url: 'https://bentoflow-pro.vercel.app/templates',
     siteName: 'BentoFlow Pro',
     type: 'website',
   }

@@ -27,9 +27,9 @@ export default function Page() {
     "@graph": [
       {
         "@type": "WebApplication",
-        "@id": "https://bentoflow.netlify.app/tools/svg-box-customizer",
+        "@id": "https://bentoflow-pro.vercel.app/tools/svg-box-customizer",
         "name": "SVG Path & Icon Box Customizer",
-        "url": "https://bentoflow.netlify.app/tools/svg-box-customizer",
+        "url": "https://bentoflow-pro.vercel.app/tools/svg-box-customizer",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "All",
         "description": "Convert raw SVG code streams into responsive, gorgeous centered grid icons with micro-interactions and glowing borders."

@@ -27,9 +27,9 @@ export default function Page() {
     "@graph": [
       {
         "@type": "WebApplication",
-        "@id": "https://bentoflow.netlify.app/tools/mesh-gradient-mixer",
+        "@id": "https://bentoflow-pro.vercel.app/tools/mesh-gradient-mixer",
         "name": "Dark UI Mesh Gradient Background Mixer",
-        "url": "https://bentoflow.netlify.app/tools/mesh-gradient-mixer",
+        "url": "https://bentoflow-pro.vercel.app/tools/mesh-gradient-mixer",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "All",
         "description": "Mix multiple radial coordinate lights into cohesive, gorgeous background glows designed for landing pages and portfolio screens."

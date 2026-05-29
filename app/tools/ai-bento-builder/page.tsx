@@ -212,9 +212,9 @@ export default function ${componentName}Bento() {
           "@graph": [
             {
               "@type": "WebApplication",
-              "@id": "https://bentoflow.netlify.app/tools/ai-bento-builder",
+              "@id": "https://bentoflow-pro.vercel.app/tools/ai-bento-builder",
               "name": "AI Bento Builder & Website Creator",
-              "url": "https://bentoflow.netlify.app/tools/ai-bento-builder",
+              "url": "https://bentoflow-pro.vercel.app/tools/ai-bento-builder",
               "applicationCategory": "DeveloperApplication",
               "operatingSystem": "All",
               "description": "Generate modern bento grids, layouts, and interactive visual dashboard components from raw language prompts using neural generation systems."

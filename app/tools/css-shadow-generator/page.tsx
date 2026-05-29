@@ -8,23 +8,23 @@ export const metadata: Metadata = {
   title: 'CSS Custom Shadow Layering Tool | BentoFlow Developer Suite',
   description: 'Design ambient, multi-layered smooth box shadows for high-contrast bento cards. Fine-tune blur, spreads, overlays, and offsets with instant exports.',
   keywords: 'CSS multi-layered shadow generator, box shadow tool, premium tailwind outer glares maker, responsive grid bento cells elevations',
-  openGraph: {
-    title: 'CSS Custom Shadow Layering Tool | BentoFlow Developer Suite',
-    description: 'Avoid harsh single box shadows by nesting up to six fine-tuned overlapping shadow stops.',
-    type: 'website',
-    url: 'https://bentoflow.netlify.app/tools/css-shadow-generator'
-  }
-};
+    openGraph: {
+      title: 'CSS Custom Shadow Layering Tool | BentoFlow Developer Suite',
+      description: 'Avoid harsh single box shadows by nesting up to six fine-tuned overlapping shadow stops.',
+      type: 'website',
+      url: 'https://bentoflow-pro.vercel.app/tools/css-shadow-generator'
+    }
+  };
 
-export default function Page() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://bentoflow.netlify.app/tools/css-shadow-generator",
-        "name": "CSS Custom Shadow Layering Tool",
-        "url": "https://bentoflow.netlify.app/tools/css-shadow-generator",
+  export default function Page() {
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "@id": "https://bentoflow-pro.vercel.app/tools/css-shadow-generator",
+          "name": "CSS Custom Shadow Layering Tool",
+          "url": "https://bentoflow-pro.vercel.app/tools/css-shadow-generator",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "All",
         "description": "Layer multiple drop shadow properties to achieve modern, ultra-soft elevated interfaces."

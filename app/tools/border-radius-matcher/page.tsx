@@ -27,9 +27,9 @@ export default function Page() {
     "@graph": [
       {
         "@type": "WebApplication",
-        "@id": "https://bentoflow.netlify.app/tools/border-radius-matcher",
+        "@id": "https://bentoflow-pro.vercel.app/tools/border-radius-matcher",
         "name": "Nested Border Radius Matcher",
-        "url": "https://bentoflow.netlify.app/tools/border-radius-matcher",
+        "url": "https://bentoflow-pro.vercel.app/tools/border-radius-matcher",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "All",
         "description": "Perfect nested border-radius distortion with automated geometric calculations. Export clean Tailwind CSS classes matching standard guidelines."

@@ -14,23 +14,23 @@ export const metadata: Metadata = {
   title: 'Glassmorphism Bento Card Creator | Free Frosted Glass Card Tailwind Maker | BentoFlow',
   description: 'Develop gorgeous glassmorphism layouts with adjustable saturation filters, background blurs, and translucent border glow scales.',
   keywords: 'Tailwind glassmorphism panel generator, frosted card css builder, grid glowing card effects tool, developer tool',
-  openGraph: {
-    title: 'Glassmorphism Bento Card Creator | Free Frosted Glass Card Tailwind Maker | BentoFlow',
-    description: 'Calibrate frosted-glass surface properties, backdrop saturation ratios, and border opacity grades over radiant colorful backmesh streams.',
-    type: 'website',
-    url: 'https://bentoflow.netlify.app/tools/glassmorphism-bento-card'
-  }
-};
+    openGraph: {
+      title: 'Glassmorphism Bento Card Creator | Free Frosted Glass Card Tailwind Maker | BentoFlow',
+      description: 'Calibrate frosted-glass surface properties, backdrop saturation ratios, and border opacity grades over radiant colorful backmesh streams.',
+      type: 'website',
+      url: 'https://bentoflow-pro.vercel.app/tools/glassmorphism-bento-card'
+    }
+  };
 
-export default function Page() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://bentoflow.netlify.app/tools/glassmorphism-bento-card",
-        "name": "Glassmorphism Bento Card Creator",
-        "url": "https://bentoflow.netlify.app/tools/glassmorphism-bento-card",
+  export default function Page() {
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "@id": "https://bentoflow-pro.vercel.app/tools/glassmorphism-bento-card",
+          "name": "Glassmorphism Bento Card Creator",
+          "url": "https://bentoflow-pro.vercel.app/tools/glassmorphism-bento-card",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "All",
         "description": "Develop gorgeous glassmorphism layouts with adjustable saturation filters, background blurs, and translucent border glow scales."

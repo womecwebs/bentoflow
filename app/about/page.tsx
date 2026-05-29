@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'About BentoFlow | The Science of Layout Design Engineering',
     description: 'Discover the engineering methodology behind our responsive bento creators and high-entropy UI layout compilers.',
-    url: 'https://bentoflow.vercel.app/about',
+    url: 'https://bentoflow-pro.vercel.app/about',
     type: 'website',
   },
 };
@@ -35,7 +35,7 @@ export default function AboutPage() {
     '@type': 'AboutPage',
     'name': 'About BentoFlow Pro',
     'description': 'A high-fidelity layout engineering utility for modern software developers, creative marketers, and interface engineers.',
-    'url': 'https://bentoflow.vercel.app/about',
+    'url': 'https://bentoflow-pro.vercel.app/about',
     'mainEntity': {
       '@type': 'SoftwareApplication',
       'name': 'BentoFlow Pro',

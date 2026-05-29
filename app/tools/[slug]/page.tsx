@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title: `${tool.title} | Free Online Developer Utility Tool`,
       description: tool.shortDescription,
-      url: `https://bentoflow.pro/tools/${tool.slug}`,
+      url: `https://bentoflow-pro.vercel.app/tools/${tool.slug}`,
       type: 'article'
     }
   };

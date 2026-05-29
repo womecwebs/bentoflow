@@ -1,6 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
-import { LayoutGrid, Twitter, Github, Mail, Globe, ArrowRight } from 'lucide-react';
+import { 
+  LayoutGrid, 
+  Twitter, 
+  Facebook, 
+  Youtube, 
+  Linkedin, 
+  Instagram, 
+  ArrowRight, 
+  Mail, 
+  Globe 
+} from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -29,115 +39,148 @@ export default function Footer() {
             <p className="text-xs text-zinc-400 leading-relaxed max-w-sm mt-1">
               The high-performance developer-first bento grid generator. Assemble production-ready layout systems, responsive portfolios, and interactive dashboard views with native Tailwind CSS compiler support.
             </p>
-            <div className="flex items-center gap-3.5 mt-3">
+            {/* Specified Social Channels */}
+            <div className="flex items-center gap-2.5 mt-3">
               <a
                 href="https://twitter.com"
                 target="_blank"
                 rel="noreferrer"
-                className="p-1.5 rounded-full bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-800 transition-all border border-zinc-800/50"
-                aria-label="Follow BentoFlow on Twitter"
+                className="p-1.5 rounded-full bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-805 transition-all border border-zinc-800/50"
+                aria-label="Twitter Profile"
               >
                 <Twitter className="h-4 w-4" />
               </a>
               <a
-                href="https://github.com"
+                href="https://youtube.com"
                 target="_blank"
                 rel="noreferrer"
-                className="p-1.5 rounded-full bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-800 transition-all border border-zinc-800/50"
-                aria-label="Browse BentoFlow Source Code on GitHub"
+                className="p-1.5 rounded-full bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-805 transition-all border border-zinc-800/50"
+                aria-label="YouTube Channel"
               >
-                <Github className="h-4 w-4" />
+                <Youtube className="h-4 w-4" />
               </a>
               <a
-                href="mailto:support@bentoflow.pro"
-                className="p-1.5 rounded-full bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-800 transition-all border border-zinc-800/50"
-                aria-label="Email BentoFlow support"
+                href="https://facebook.com"
+                target="_blank"
+                rel="noreferrer"
+                className="p-1.5 rounded-full bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-805 transition-all border border-zinc-800/50"
+                aria-label="Facebook Page"
               >
-                <Mail className="h-4 w-4" />
+                <Facebook className="h-4 w-4" />
               </a>
-              <Link
-                href="/"
-                className="p-1.5 rounded-full bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-800 transition-all border border-zinc-800/50"
-                aria-label="Platform global status"
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noreferrer"
+                className="p-1.5 rounded-full bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-805 transition-all border border-zinc-800/50"
+                aria-label="LinkedIn Profile"
               >
-                <Globe className="h-4 w-4" />
-              </Link>
+                <Linkedin className="h-4 w-4" />
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noreferrer"
+                className="p-1.5 rounded-full bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-805 transition-all border border-zinc-800/50"
+                aria-label="Instagram Profile"
+              >
+                <Instagram className="h-4 w-4" />
+              </a>
+              <a
+                href="https://reddit.com"
+                target="_blank"
+                rel="noreferrer"
+                className="p-1.5 rounded-full bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-805 transition-all border border-zinc-800/50 flex items-center justify-center"
+                aria-label="Reddit Forum"
+              >
+                <span className="text-[10px] font-mono font-bold uppercase leading-none">RD</span>
+              </a>
             </div>
           </div>
 
-          {/* Column 2: Core Utility Navigation Maps */}
+          {/* Column 2: 6 Core Tools Links */}
           <div>
             <h3 className="text-xs font-semibold text-zinc-200 tracking-wider uppercase mb-5 font-mono">
-              Core Utilities
+              6 Core Layout Tools
             </h3>
             <ul className="space-y-3.5">
               <li>
                 <Link
-                  href="/generator"
+                  href="/tools/glassmorphism-bento-card"
                   className="group flex items-center gap-1.5 text-xs text-zinc-400 hover:text-white transition-colors"
                 >
                   <ArrowRight className="h-3 w-3 text-zinc-600 transition-transform group-hover:translate-x-0.5" />
-                  Grid Generator
+                  Glassmorphism Bento Creator
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/templates"
+                  href="/tools/css-shadow-generator"
                   className="group flex items-center gap-1.5 text-xs text-zinc-400 hover:text-white transition-colors"
                 >
                   <ArrowRight className="h-3 w-3 text-zinc-600 transition-transform group-hover:translate-x-0.5" />
-                  Layout Templates
+                  CSS Custom Shadow Layers
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/generator"
+                  href="/tools/border-radius-matcher"
                   className="group flex items-center gap-1.5 text-xs text-zinc-400 hover:text-white transition-colors"
                 >
                   <ArrowRight className="h-3 w-3 text-zinc-600 transition-transform group-hover:translate-x-0.5" />
-                  Interactive Editor Sandbox
+                  Nested Border Curvature Matcher
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/templates"
+                  href="/tools/breakpoint-simulator"
                   className="group flex items-center gap-1.5 text-xs text-zinc-400 hover:text-white transition-colors"
                 >
                   <ArrowRight className="h-3 w-3 text-zinc-600 transition-transform group-hover:translate-x-0.5" />
-                  Community Showcase Grid
+                  Responsive Breakpoint Simulator
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools/mesh-gradient-mixer"
+                  className="group flex items-center gap-1.5 text-xs text-zinc-400 hover:text-white transition-colors"
+                >
+                  <ArrowRight className="h-3 w-3 text-zinc-600 transition-transform group-hover:translate-x-0.5" />
+                  Mesh Background Colors Mixer
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools/link-in-bio-preview"
+                  className="group flex items-center gap-1.5 text-xs text-zinc-400 hover:text-white transition-colors"
+                >
+                  <ArrowRight className="h-3 w-3 text-zinc-600 transition-transform group-hover:translate-x-0.5" />
+                  Sleek Social Link-in-Bio Maker
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Column 3: Targeted Programmatic Landing Links */}
+          {/* Column 3: Important Platform Pages */}
           <div>
             <h3 className="text-xs font-semibold text-zinc-200 tracking-wider uppercase mb-5 font-mono">
-              SEO landing & Templates
+              Important Pages
             </h3>
-            <ul className="space-y-3.5">
+            <ul className="space-y-3.5 font-sans">
               <li>
                 <Link
-                  href="/templates/developer-portfolio-bento"
+                  href="/generator"
                   className="group flex items-center gap-1.5 text-xs text-zinc-400 hover:text-white transition-all hover:translate-x-0.5"
                 >
-                  Developer Portfolio Layout
+                  Workspace Grid Generator
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/templates/saas-analytics-dashboard"
+                  href="/tools/ai-bento-builder"
                   className="group flex items-center gap-1.5 text-xs text-zinc-400 hover:text-white transition-all hover:translate-x-0.5"
                 >
-                  SaaS Analytics Console
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/templates/minimal-link-in-bio"
-                  className="group flex items-center gap-1.5 text-xs text-zinc-400 hover:text-white transition-all hover:translate-x-0.5"
-                >
-                  Minimal Link-in-Bio Canvas
+                  AI Prompted Bento Creator
                 </Link>
               </li>
               <li>
@@ -145,33 +188,63 @@ export default function Footer() {
                   href="/templates"
                   className="group flex items-center gap-1.5 text-xs text-zinc-400 hover:text-white transition-all hover:translate-x-0.5"
                 >
-                  Showcase & Custom Presets
+                  Layout Templates & Presets
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/blog"
+                  className="group flex items-center gap-1.5 text-xs text-zinc-400 hover:text-white transition-all hover:translate-x-0.5"
+                >
+                  Bento Layout Insights Blog
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/about"
+                  className="group flex items-center gap-1.5 text-xs text-zinc-400 hover:text-white transition-all hover:translate-x-0.5"
+                >
+                  About Our Organization
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/privacy-policy"
+                  className="group flex items-center gap-1.5 text-xs text-zinc-400 hover:text-white transition-all hover:translate-x-0.5"
+                >
+                  Privacy Policy & Data Security
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Column 4: Framework & Platform Output Information */}
+          {/* Column 4: Platform Information & Mail */}
           <div className="flex flex-col gap-4">
             <h3 className="text-xs font-semibold text-zinc-200 tracking-wider uppercase mb-1 font-mono">
-              Framework Details
+              Framework & Support
             </h3>
             <p className="text-xs text-zinc-400 leading-relaxed">
               BentoFlow compiles production-grade outputs built strictly on semantic, raw HTML5 structures and robust CSS Grid coordinates.
             </p>
-            <div className="flex flex-wrap gap-2 mt-1">
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-900 text-zinc-300 border border-zinc-800">
-                Tailwind v4
-              </span>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-900 text-zinc-300 border border-zinc-800">
-                React TSX
-              </span>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-900 text-zinc-300 border border-zinc-800">
-                HTML5 Semantics
-              </span>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-900 text-zinc-300 border border-zinc-800">
-                WCAG Compliant
-              </span>
+            <div className="flex flex-col gap-2 mt-1">
+              <a 
+                href="mailto:support@bentoflow-pro.vercel.app"
+                className="text-xs text-zinc-400 hover:text-white font-mono flex items-center gap-2"
+              >
+                <Mail className="h-3.5 w-3.5 text-emerald-400" />
+                <span>support@bentoflow-pro.vercel.app</span>
+              </a>
+              <div className="flex flex-wrap gap-2 mt-2">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-900 text-zinc-300 border border-zinc-800">
+                  Tailwind v4
+                </span>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-900 text-zinc-300 border border-zinc-800">
+                  React TSX
+                </span>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-900 text-zinc-300 border border-zinc-800">
+                  WCAG Compliant
+                </span>
+              </div>
             </div>
           </div>
 
@@ -183,9 +256,9 @@ export default function Footer() {
             &copy; {currentYear} BentoFlow Pro. All rights reserved. Precision-built for the crawlable, modern web ecosystem.
           </p>
           <div className="flex gap-4 text-[11px] text-zinc-500">
-            <Link href="/" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <span>&bull;</span>
-            <Link href="/" className="hover:text-white transition-colors">Terms of Service</Link>
+            <Link href="/about" className="hover:text-white transition-colors">About Us</Link>
           </div>
         </div>
       </div>

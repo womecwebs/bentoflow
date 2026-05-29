@@ -48,7 +48,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title: `${template.title} - Free Responsive Bento Grid Layout | BentoFlow`,
       description: template.description,
-      url: `https://bentoflow.pro/templates/${template.slug}`,
+      url: `https://bentoflow-pro.vercel.app/templates/${template.slug}`,
       type: 'article',
     }
   };

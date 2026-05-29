@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
+import Script from 'next/script';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ReaddyPromoModal from '@/components/ReaddyPromoModal';
@@ -27,11 +28,11 @@ export const metadata: Metadata = {
     'SSR Next.js visual generator'
   ],
   authors: [{ name: 'BentoFlow Pro Team' }],
-  metadataBase: new URL('https://bentoflow.netlify.app'),
+  metadataBase: new URL('https://bentoflow-pro.vercel.app'),
   openGraph: {
     title: 'BentoFlow Pro | High-Performance Bento Grid Builder',
     description: 'The ultimate SaaS platform for generating high-performance, accessible, and SEO-optimized Bento Grids for Tailwind CSS, portfolios, and Shopify.',
-    url: 'https://bentoflow.netlify.app',
+    url: 'https://bentoflow-pro.vercel.app',
     siteName: 'BentoFlow Pro',
     images: [
       {
@@ -63,6 +64,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+      <head>
+        {/* Google Site Tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-SDFMW8BE8R"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-SDFMW8BE8R');
+          `}
+        </Script>
+      </head>
       <body suppressHydrationWarning className="bg-zinc-950 text-zinc-100 min-h-screen flex flex-col antialiased">
         {/* Ambient Grid overlay and glowing light effects */}
         <div className="fixed inset-0 bg-grid-pattern bg-ambient-glow pointer-events-none -z-50 opacity-100" />

@@ -27,9 +27,9 @@ export default function Page() {
     "@graph": [
       {
         "@type": "WebApplication",
-        "@id": "https://bentoflow.netlify.app/tools/link-in-bio-preview",
+        "@id": "https://bentoflow-pro.vercel.app/tools/link-in-bio-preview",
         "name": "Social Media Link-In-Bio Preview Engine",
-        "url": "https://bentoflow.netlify.app/tools/link-in-bio-preview",
+        "url": "https://bentoflow-pro.vercel.app/tools/link-in-bio-preview",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "All",
         "description": "Compile modular link-in-bio layouts containing social networks profiles, profile photo containers, and mini-grids. Instantly export responsive HTML/CSS structures."

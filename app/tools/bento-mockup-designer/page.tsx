@@ -30,9 +30,9 @@ export default function Page() {
     "@graph": [
       {
         "@type": "WebApplication",
-        "@id": "https://bentoflow.netlify.app/tools/bento-mockup-designer",
+        "@id": "https://bentoflow-pro.vercel.app/tools/bento-mockup-designer",
         "name": "Bento Mockup & Showcase Designer",
-        "url": "https://bentoflow.netlify.app/tools/bento-mockup-designer",
+        "url": "https://bentoflow-pro.vercel.app/tools/bento-mockup-designer",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "All",
         "description": "Create high-fidelity interactive bento mockups for SaaS products and developer portfolios. Upload local assets and export components instantly."

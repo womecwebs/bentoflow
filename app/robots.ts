@@ -23,6 +23,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/*?template=', '/*?filter='],
       }
     ],
-    sitemap: 'https://bentoflow.vercel.app/sitemap.xml',
+    sitemap: 'https://bentoflow-pro.vercel.app/sitemap.xml',
   };
 }

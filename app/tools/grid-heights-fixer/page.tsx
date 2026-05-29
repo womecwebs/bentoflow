@@ -27,9 +27,9 @@ export default function Page() {
     "@graph": [
       {
         "@type": "WebApplication",
-        "@id": "https://bentoflow.netlify.app/tools/grid-heights-fixer",
+        "@id": "https://bentoflow-pro.vercel.app/tools/grid-heights-fixer",
         "name": "Dynamic Grid Row Heights Fixer",
-        "url": "https://bentoflow.netlify.app/tools/grid-heights-fixer",
+        "url": "https://bentoflow-pro.vercel.app/tools/grid-heights-fixer",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "All",
         "description": "Balance layout heights automatically. Analyze aspect ratios, configure minmax bounds, and prevent image or text box overflows."

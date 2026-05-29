@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free Tailwind Bento Grid Generator & Layout Builder | BentoFlow',
     description: 'Design and export production-ready Tailwind utility code, clean React elements, or raw CSS grid models instantly.',
-    url: 'https://bentoflow.pro/generator',
+    url: 'https://bentoflow-pro.vercel.app/generator',
     type: 'website',
   }
 };

@@ -4,7 +4,7 @@ import { TEMPLATES } from '../data/templatesData';
 import { BLOG_POSTS } from '../data/blogData';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://bentoflow.vercel.app';
+  const baseUrl = 'https://bentoflow-pro.vercel.app';
   
   // 1. Static Core Pages Mapping
   const staticPages: MetadataRoute.Sitemap = [
